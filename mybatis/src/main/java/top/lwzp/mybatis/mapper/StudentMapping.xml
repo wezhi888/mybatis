@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.lwzp.mybatis.mapper.StudentMapper">
+    <select id="selectStudentById" resultType="top.lwzp.mybatis.vo.Student" parameterType="int">
+        select stu_no as stuNo,stu_age as stuAge,stu_name as stuName,grade_name as gradeName from student where stu_no = #{stuNo}
+    </select>
+    <insert id="addStudent" parameterType="map">
+        INSERT INTO student (stu_no, stu_name, stu_age, grade_name, app_id, obj_type, obj_id, uid)
+        VALUES (#{stuNo}, #{stuName}, #{stuAge}, #{gradeName}, #{appId}, #{objType}, #{obj_id}, #{uid});
+    </insert>
+    <update id="updateStudentAppId" parameterType="map">
+        UPDATE student SET app_id=#{appId} WHERE stu_no=#{stuNo}
+    </update>
+    <update id="updateStudentState" parameterType="map">
+        UPDATE student SET state=#{state} WHERE stu_no=#{stuNo}
+    </update>
+    <update id="updateStudentAddDate" parameterType="map">
+        UPDATE student SET add_date=#{date} WHERE stu_no=#{stuNo}
+    </update>
+</mapper>

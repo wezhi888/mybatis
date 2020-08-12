@@ -16,5 +16,7 @@
     <mappers>
 <!--        <package name="top.lwzp.mybatis.vo"/>-->
         <mapper resource="top/lwzp/mybatis/vo/personMapping.xml"/>
+        <mapper resource="top/lwzp/mybatis/vo/stuMapping.xml"/>
+        <mapper resource="top/lwzp/mybatis/mapper/StudentMapping.xml"/>
     </mappers>
 </configuration>
