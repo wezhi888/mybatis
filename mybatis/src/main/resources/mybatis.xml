@@ -5,6 +5,12 @@
     <settings>
         <setting name="cacheEnabled" value="true"/>
     </settings>
+    <typeAliases>
+        <!-- 设置类的别名：别名不区分大小写,这里定义的别名可以在mapper.xml中使用 -->
+        <typeAlias type="top.lwzp.mybatis.vo.Student" alias="student"/>
+        <!-- 按照类所在的包自动注册别名，别名即为类名-->
+        <package name="top.lwzp.mybatis.vo"/>
+    </typeAliases>
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
